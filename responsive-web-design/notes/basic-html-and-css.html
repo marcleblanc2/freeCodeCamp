@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- !DOCTYPE html tells the browser that we're using HTML5 -->
+
+<!-- Start of the HTML code -->
+<html>
+
+<head>
+    <!-- Metadata elements go in the head -->
+
+    <!-- Sets the page title, used to name the tab, and for Google search listings -->
+    <title>FCC Notes</title>
+
+    <!-- Import external font -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+    <!-- In-file CSS code, usually put in a separate file and referenced -->
+    <style>
+        /* CSS selector for all h2 elements in this scope */
+        h2 {
+
+            /* Font colour */
+            color: whitesmoke;
+
+            font-size: large;
+
+            font-family: Lobster, Helvetica, sans-serif;
+            /* 
+            font-family: FAMILY_NAME, GENERIC_NAME;
+                GENERIC_NAME
+                    Optional
+                    Fallback font in case the other specified font is not available
+                    Not case-sensitive
+                    Do not need quotes because they are CSS keywords
+                FAMILY_NAME
+                    Case-sensitive
+                    Need to be wrapped in quotes if there is a space in the name
+            */
+
+        }
+
+        /* Change images from inline elements to block elements, so they start a new line in the normal flow of the document */
+        img {
+            display: block;
+            margin: 10px;
+        }
+
+        /* CSS class, to be referred to in element tags */
+        .blue-text {
+
+            color: blue;
+
+        }
+
+        /* CSS class to set a static image size */
+        .large-image {
+            width: 500px;
+        }
+
+        /* CSS class to make an image circular */
+        .circular-image {
+            border-radius: 50%;
+        }
+
+        .thin-red-border {
+            border: 2px solid red;
+
+            /* Add rounded corner to border */
+            border-radius: 5px;
+        }
+
+        .green-background {
+            background-color: green;
+        }
+
+        /* Target individual elements by ID */
+        #header {
+            background-color: hotpink;
+        }
+
+        /* 
+        Control the space surrounding each HTML element
+            Padding
+                Space between the element's content and its border
+                Larger padding pushes the border away from the content
+            Border
+                Default rectangle around each element
+            Margin
+                Space between the element's border and surrounding elements
+                Larger margin pushes the border in from the containing element, making the content smaller?
+                Can be negative, to make the element larger than the surrounding element
+        */
+        .top-left-padding {
+            /* padding: top right bottom left; */
+            padding: 10px 0px 0px 10px;
+        }
+
+        .small-padding {
+            /* One value sets the padding on all 4 sides */
+            padding: 10px;
+        }
+
+        /* 
+        Attribute selector
+        Attribute is type, value is radio
+        */
+        [type='radio'] {
+            margin: 20px 0px 20px 0px;
+        }
+
+        /* 
+        Absolute vs Relative Units
+            Absolute
+                px - pixels
+                %  - percentage of containing parent size
+                mm - millimeters
+                in - inches
+            Relative
+                em - relative to the element's font size
+                rem - 
+        */
+
+        /* Every HTML page has a body element, even if it isn't explicitly declared, so it can always be used to format the page */
+        body {
+            background-color: black;
+            color: blanchedalmond;
+        }
+
+        /* 
+        CSS Application Order / Inheritance 
+            CSS is applied in the following order, the later in application, the higher the priority
+            Body / parent elements
+            CSS class
+                In order of definition in the <style> block, later definitions take priority
+                Not in order of assignment in the element's tag
+            CSS rules targeting by ID
+            Inline CSS
+            !important
+        */
+
+        /* CSS Variables */
+        /* Internet Exploder doesn't support CSS variables */
+        /* Declaration  */
+        :root {
+            /* --variable-name: value; */
+            --blue: rgb(0, 0, 255);
+        }
+
+        /* Reference  */
+        .variable-reference {
+
+            /* For IE compatibility, define a fallback value first, then a variable value second, so any browser that doesn't support variables will skip them and use the fallback, and any browser that does support variables will overwrite the first value with the variable*/
+            color: blue;
+
+            /* Use the var() function, where the first parameter is the name of the variable, and the second parameter is a fallback value, in case the variable isn't found. */
+            color: var(--blue, blue)
+        }
+
+        /*
+        Variable Inheritance and Scoping
+            Variables are inherited by the children of the element where they're declared
+            :root is a pseudo-class selector that matches the root element of the document, usually the html element. By creating your variables in :root, they will be available globally and can be accessed from any other selector in the style sheet.
+            Variables can have other values assigned within elements lower in the inheritance tree, and the new values will be inherited by that element's children
+        */
+
+        /*
+        Media Queries 
+            Media - the screen / browser / viewport that the page is being displayed in
+            Query - gets information about the media
+            
+            min-width
+            max-width
+        
+        */
+        /* Overwrite :root variable definitions based on screen size */
+        @media (max-width: 350px) {
+            :root {
+                --blue: rgb(0, 0, 200);
+            }
+        }
+
+        .color-example {
+            /* 
+            rgba(red, green, blue, alpha) 
+            alpha is the opacity, from 0 (transparent) - 1 (opaque)
+            */
+            color: rgba(255, 0, 0, 0.1)
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Page content goes in the body -->
+
+    <header id="header">This is the page header</header>
+
+
+    <!-- All pages need a main section, so screen readers and SEO know what's on this page that's not on any other page on the site -->
+    <main>
+
+        <!-- Link to elements on the page, target by id -->
+        <a href="#footer">Jump to bottom</a>
+
+        <!-- There should only be one h1 on each page -->
+        <h1>This is the page title</h1>
+
+        <!-- Link to external site to open in a new tab -->
+        <p>Click here to view more <a href="https://freecatphotoapp.com" target="_blank">cat photos</a>.</p>
+
+        <!-- Dead link -->
+        <p>Click here to view more <a href="#" target="_blank">cat photos</a>.</p>
+
+        <!-- All images need alt parameters -->
+        <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back." class="circular-image">
+
+        <!-- If the image is sufficiently described in context, leave alt blank -->
+        <img src="https://bit.ly/fcc-relaxing-cat" alt="">
+
+        <!-- This photo is a link that opens in a new tab -->
+        <a href="https://bit.ly/fcc-running-cats" target="_blank">
+            <img src="https://bit.ly/fcc-running-cats" alt="Three kittens running towards the camera.">
+        </a>
+
+        <!-- Horizontal rule / line -->
+        <hr>
+
+        <!-- Div elements are general purpose containers for other elements -->
+        <div>
+
+            <!-- This is an unordered list -->
+            <p>This is an unordered list</p>
+            <ul>
+                <li>Milk</li>
+                <li>Cheese</li>
+            </ul>
+
+            <!-- This is an ordered list -->
+            <p>This is an ordered list</p>
+            <ol>
+                <li>Milk</li>
+                <li>Cheese</li>
+            </ol>
+
+        </div>
+
+        <!-- Horizontal rule / line -->
+        <hr>
+
+        <!-- Create a user input form, specifying the destination -->
+        <form action="/url-where-you-want-to-submit-form-data">
+
+            <!-- Text input field (required) -->
+            <input type="text" placeholder="this is placeholder text" required>
+
+            <!-- Radio buttons in a group together -->
+            <!-- First option checked by default -->
+            <label for="indoor">
+                <input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked>Indoor
+            </label>
+            <label for="outdoor">
+                <input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor">Outdoor
+            </label>
+
+            <!-- Checkboxes in a group together -->
+            <!-- First option checked by default -->
+            <label for="loving">
+                <input id="loving" type="checkbox" name="personality" value="loving" checked>Loving
+            </label>
+            <label for="hating">
+                <input id="hating" type="checkbox" name="personality" value="hating">Hating
+            </label>
+
+            <!-- Submit button to send the form data to the destination -->
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <!-- Horizontal rule / line -->
+        <hr>
+
+        <!-- Paragraph using inline CSS -->
+        <p style="color: green; font-weight: 800;">This is a paragraph with inline CSS style.</p>
+
+        <!-- Paragraph using multiple CSS classes -->
+        <p class="blue-text thin-red-border green-background small-padding">This is a paragraph with multiple CSS
+            classes.</p>
+
+        <!-- Link to elements on the page, target by id -->
+        <a href="#header">Jump to top</a>
+
+    </main>
+
+    <footer id="footer">This is the page footer</footer>
+
+</body>
+
+</html>

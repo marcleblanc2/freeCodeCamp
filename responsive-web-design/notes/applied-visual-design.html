@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- !DOCTYPE html tells the browser that we're using HTML5 -->
+
+<!-- Start of the HTML code -->
+<html>
+
+<head>
+    <!-- Metadata elements go in the head -->
+
+    <!-- Sets the page title, used to name the tab, and for Google search listings -->
+    <title>Card Layout</title>
+
+    <style>
+
+        body {
+            background-color: darkgrey;
+        }
+
+        h4 {
+            background-color: rgba(45, 45, 45, 0.1);
+            padding: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 27px;
+            font-weight: 800;
+        }
+
+        p {
+            text-align: justify;
+            line-height: 20px;
+        }
+
+        a {
+            margin-right: 20px;
+            opacity: 0.9;
+        }
+
+        .fullCard {
+            background-color: lightgrey;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 20px;
+            padding: 4px;
+            width: 245px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        /* 
+        box-shadow 
+            Applies one or more shadows to an element
+            Takes values for
+                offset-x (how far to push the shadow horizontally from the element)
+                offset-y (how far to push the shadow vertically from the element)
+                blur-radius
+                spread-radius
+                color
+            The blur-radius and spread-radius values are optional
+            Multiple box-shadows can be created by using commas to separate properties of each box-shadow element.   
+        */
+
+        .cardContent {
+            padding: 10px;
+
+            /* margin: auto centers the content in its parent */
+            margin: auto;
+        }
+
+        /*
+        Pseudo-classes
+            Added to selectors, to target by state
+        */
+        a:hover {
+            color: green;
+        }
+
+        /*
+        Normal flow
+            CSS Box Model
+            Block-level items automatically start on a new line
+                Headings
+                Paragraphs
+                divs
+            Line-level / inline items don't start a new line
+                images
+                spans
+            
+            CSS has the position property to override the normal flow
+            Values
+                Relative
+                    Specifies where the element should be moved, relative to its default position in the normal flow
+                    Direction: left, right, top, bottom
+                    Distance: how far away from the default position to move it, counter intuitive
+                    Does not impact the position of non-child elements, so it can overlap other elements
+                Absolute
+                    Locks the element in place, relative to its closest parent element that has a position declared
+                    Removes the element from the normal flow, so the next element gets bumped up into its normal place
+                Fixed
+                    Locks the element in place, relative to the browser window
+                    Doesn't move when the user scrolls
+        */
+        /* this moves the element 10 pixels down, away from the top side of where it would have normally been positioned */
+        .relative-position {
+            position: relative;
+            top: 10px;
+        }
+
+        header {
+            position: fixed;
+            background-color: darkslategray;
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        main {
+            position: relative;
+            top: 30px;
+            left: 100px;
+        }
+
+        /* 
+        Colour 
+            See Google's Material Design from 2014: https://material.io/design/color/the-color-system.html
+        
+        */
+
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        This is a header.
+    </header>
+
+    <main>
+        <!-- By nesting 3 layers of div elements, we can set CSS properties for each layer separately, to create a card look on the page -->
+        <div id="google" class="fullCard">
+            <div class="cardContent">
+                <div class="cardText">
+                    <h4>Google</h4>
+                    <p>Google was founded by Larry Page and Sergey Brin while they were Ph.D. students at
+                        <strong>Stanford
+                            University</strong>.
+                    </p>
+                </div>
+                <div class="cardLinks">
+                    <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank">Larry Page</a>
+                    <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank">Sergey Brin</a>
+                </div>
+            </div>
+        </div>
+        <div id="amazon" class="fullCard">
+            <div class="cardContent">
+                <div class="cardText">
+                    <h4>Amazon</h4>
+                    <p>Amazon was founded by Jeff Bezos.</p>
+                </div>
+                <div class="cardLinks">
+                    <a href="https://en.wikipedia.org/wiki/Jeff_Bezos" target="_blank">Jeff Bezos</a>
+                </div>
+            </div>
+        </div>
+        <div id="microsoft" class="fullCard">
+            <div class="cardContent">
+                <div class="cardText">
+                    <h4>Microsoft</h4>
+                    <p>Microsoft was founded by Bill Gates.
+                    </p>
+                </div>
+                <div class="cardLinks">
+                    <a href="https://en.wikipedia.org/wiki/Bill_Gates" target="_blank">Bill Gates</a>
+                </div>
+            </div>
+        </div>
+        <div id="apple" class="fullCard">
+            <div class="cardContent">
+                <div class="cardText">
+                    <h4>Apple</h4>
+                    <p>Apple was founded by Steve Jobs and Steve Wozniak.
+                    </p>
+                </div>
+                <div class="cardLinks">
+                    <a href="https://en.wikipedia.org/wiki/Steve_Jobs" target="_blank">Steve Jobs</a>
+                    <a href="https://en.wikipedia.org/wiki/Steve_Wozniak" target="_blank">Steve Wozniak</a>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+    </main>
+
+</body>
+
+</html>
