@@ -35,18 +35,19 @@
         header {
             position: fixed;
             color: var(--text-light, white);
-            background-color: var(--primary-dark, grey);
+            background-color: var(--primary, grey);
             width: 100%;
             top: 0%;
             left: 0%;
-            padding: 10px;
+            padding: 10px 0px 0px 0px;
+            margin: 0px;
             z-index: 100;
             text-align: center;
         }
 
         main {
             position: relative;
-            margin: 60px 0px 30px 0px;
+            margin: 100px 0px 30px 0px;
         }
 
         h4 {
@@ -177,16 +178,49 @@
                 saturation - percent of grey, 100% saturation means 0 grey
                 lightness - black (0%), normal (50%), white (100%)
         */
+
+        header h1 {
+            margin: 0px;
+            padding-bottom: 10px;
+        }
+
+        nav {
+            background-color: var(--primary-dark, grey);
+            margin: 0px;
+        }
+
+        nav ul {
+            margin: 0px;
+            padding: 5px 0px 5px 30px;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+        }
     </style>
 </head>
 
-<body>
+<body id="body">
 
-    <header>
-        Header
+    <header id="header">
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <!-- TODO: Fix Top / Content links -->
+                <li><a href="#body">Top</a></li>
+                <li><a href="#main">Content</a></li>
+                <li><a href="#footer">Bottom</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
+    <main id="main">
 
         <!-- By nesting 3 layers of div elements, we can set CSS properties for each layer separately, to create a card look on the page -->
         <div id="apple" class="fullCard">
@@ -295,7 +329,7 @@
 
     </main>
 
-    <footer>
+    <footer id="footer">
         Footer
     </footer>
 
