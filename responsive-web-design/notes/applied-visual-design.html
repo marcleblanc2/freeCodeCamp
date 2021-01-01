@@ -7,42 +7,89 @@
 <head>
     <!-- Metadata elements go in the head -->
 
+    <!-- Refresh the browser to load file changes while I'm adding to these notes -->
+    <meta http-equiv="refresh" content="2">
+
     <!-- Sets the page title, used to name the tab, and for Google search listings -->
-    <title>Card Layout</title>
+    <title>Applied Visual Design</title>
 
     <style>
+        :root {
+            /* Define colour variables globally, so they're available in any scope on the page */
+            --primary: #344955;
+            --primary-dark: #232F34;
+            --primary-light: #4A6572;
+            --secondary: #F9AA33;
+            --secondary-dark: #C17B00;
+            --secondary-light: #FFDC65;
+            --text-light: #D3D3D3;
+            --text-dark: #000000;
+        }
 
         body {
-            background-color: darkgrey;
+            background-color: var(--primary-light, lightgrey);
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            position: fixed;
+            color: var(--text-light, white);
+            background-color: var(--primary-dark, grey);
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            padding: 10px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        main {
+            position: relative;
+            margin: 60px 0px 30px 0px;
         }
 
         h4 {
-            background-color: rgba(45, 45, 45, 0.1);
+            background-color: var(--primary, darkgrey);
+            color: var(--text-light, white);
             padding: 10px;
+            margin: 0px;
+            border-radius: 7px;
             text-align: center;
-            text-transform: uppercase;
+            text-transform: capitalize;
             font-size: 27px;
-            font-weight: 800;
+            font-weight: 550;
         }
 
         p {
-            text-align: justify;
+            text-align: left;
             line-height: 20px;
+            color: var(--text-dark, black);
         }
 
         a {
-            margin-right: 20px;
             opacity: 0.9;
+
+            /* Not working as intended */
+            /* TODO: Fix */
+            text-align: justify;
+        }
+
+        /*
+        Pseudo-classes
+            Added to selectors, to target by state
+        */
+        a:hover {
+            color: var(--secondary-dark, orangered);
         }
 
         .fullCard {
-            background-color: lightgrey;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin: 20px;
-            padding: 4px;
-            width: 245px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            background-color: var(--text-light, lightgrey);
+            border: 1px solid var(--text-light, green);
+            border-radius: 7px;
+            margin: 10px;
+            padding: 0px;
+            width: 250px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
         }
 
         /* 
@@ -65,12 +112,8 @@
             margin: auto;
         }
 
-        /*
-        Pseudo-classes
-            Added to selectors, to target by state
-        */
-        a:hover {
-            color: green;
+        .cardLinks {
+            text-align: justify;
         }
 
         /*
@@ -104,36 +147,42 @@
             top: 10px;
         }
 
-        header {
-            position: fixed;
-            background-color: darkslategray;
-            width: 100%;
-            top: 0%;
-            left: 0%;
-            padding: 10px;
-            z-index: 100;
-        }
-
-        main {
-            position: relative;
-            top: 30px;
-            left: 100px;
+        footer {
+            color: var(--text-dark, black);
+            text-align: center;
         }
 
         /* 
         Colour 
             See Google's Material Design from 2014: https://material.io/design/color/the-color-system.html
-        
+            Accessibility: Ensure that colour is not the only indicator of important information
+            Additive primary colours: red, green, blue
+            Secondary colours
+                Mixing any two primary colours
+                The complementary colour to the primary colour not used
+                    ex. Yellow (red + green) is the complementary colour for blue
+            Tertiary colours
+                Mixing a primary colour with one of its secondary colour neighbours
+                ex. red (primary) + yellow (secondary of red and green combined) = orange (tertiary)
+
+        Input methods
+            Keywords - blue, purple, pink, hotpink, etc.
+            Hex: #000000 - #FFFFFF
+            Short hex: #000 - #FFF
+            rgb(red, green, blue)
+            rgba(red, green, blue, alpha) where alpha is opacity
+            hsl(hue, saturation, lightness)
+                hue - colour on a colour wheel, from 0 - 360 degrees
+                saturation - percent of grey, 100% saturation means 0 grey
+                lightness - black (0%), normal (50%), white (100%)
         */
-
-
     </style>
 </head>
 
 <body>
 
     <header>
-        This is a header.
+        Header
     </header>
 
     <main>
@@ -190,10 +239,15 @@
             </div>
         </div>
 
-        
+
 
 
     </main>
+
+
+    <footer>
+        Footer
+    </footer>
 
 </body>
 
