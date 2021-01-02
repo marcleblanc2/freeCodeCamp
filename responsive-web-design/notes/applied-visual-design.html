@@ -8,7 +8,7 @@
     <!-- Metadata elements go in the head -->
 
     <!-- Refresh the browser to load file changes while I'm adding to these notes -->
-    <meta http-equiv="refresh" content="2">
+    <!-- <meta http-equiv="refresh" content="2"> -->
 
     <!-- Sets the page title, used to name the tab, and for Google search listings -->
     <title>Applied Visual Design</title>
@@ -220,6 +220,13 @@
                 lightness - black (0%), normal (50%), white (100%)
         */
 
+        /* 
+        Semantic elements
+            <div> - groups content, doesn't provide semantic meaning
+            <article> - groups independent, self-contained content, like a blog post
+            <section> - groups related content, can be nested within <article> to show chapters, like sections of a blog post
+         */
+
 
         
     </style>
@@ -324,6 +331,10 @@
                     <p>
                         HP was founded by Bill Hewlett and David Packard.
                     </p>
+                    <audio id="hp-audio" controls style="width: 100%;">
+                        <source src="resources/hp-audio.m4a" type="audio/mpeg">
+                        <track src="resources/hp-audio-track.vtt" default>
+                    </audio>
                 </div>
                 <div class="cardLinks">
                     <a href="https://en.wikipedia.org/wiki/Bill_Hewlett" target="_blank">Bill Hewlett</a>
