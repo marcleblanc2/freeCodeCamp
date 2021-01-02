@@ -109,6 +109,18 @@
             color: var(--secondary-dark, orangered);
         }
 
+        figure {
+            margin: 0px;
+        }
+
+        figcaption {
+            font-size: small;
+        }
+
+        audio {
+            width: 100%;
+        }
+
         .fullCard {
             background-color: var(--text-light, lightgrey);
             border: 1px solid var(--text-light, green);
@@ -119,8 +131,8 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
         }
 
-        /* 
-        box-shadow 
+        /*
+        box-shadow
             Applies one or more shadows to an element
             Takes values for
                 offset-x (how far to push the shadow horizontally from the element)
@@ -129,7 +141,7 @@
                 spread-radius
                 color
             The blur-radius and spread-radius values are optional
-            Multiple box-shadows can be created by using commas to separate properties of each box-shadow element.   
+            Multiple box-shadows can be created by using commas to separate properties of each box-shadow element.
         */
 
         .cardContent {
@@ -153,7 +165,7 @@
             Line-level / inline items don't start a new line
                 images
                 spans
-            
+
             CSS has the position property to override the normal flow
             Values
                 Relative
@@ -175,9 +187,9 @@
         }
 
         #apple {
-            background: linear-gradient(50deg, red, orange, yellow, green, blue, indigo, purple );
+            background: linear-gradient(50deg, red, orange, yellow, green, blue, indigo, purple);
         }
-        
+
         #google {
             /* Set the background to an image instead of a colour */
             /* background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png"); */
@@ -195,8 +207,8 @@
             transform: scale(1.15);
         }
 
-        /* 
-        Colour 
+        /*
+        Colour
             See Google's Material Design from 2014: https://material.io/design/color/the-color-system.html
             Accessibility: Ensure that colour is not the only indicator of important information
             Additive primary colours: red, green, blue
@@ -220,15 +232,12 @@
                 lightness - black (0%), normal (50%), white (100%)
         */
 
-        /* 
+        /*
         Semantic elements
             <div> - groups content, doesn't provide semantic meaning
             <article> - groups independent, self-contained content, like a blog post
             <section> - groups related content, can be nested within <article> to show chapters, like sections of a blog post
          */
-
-
-        
     </style>
 </head>
 
@@ -331,10 +340,13 @@
                     <p>
                         HP was founded by Bill Hewlett and David Packard.
                     </p>
-                    <audio id="hp-audio" controls style="width: 100%;">
-                        <source src="resources/hp-audio.m4a" type="audio/mpeg">
-                        <track src="resources/hp-audio-track.vtt" default>
-                    </audio>
+                    <figure>
+                        <figcaption>Voice to Text</figcaption>
+                        <audio id="hp-audio" controls>
+                            <source src="resources/hp-audio.m4a" type="audio/mpeg">
+                            <track src="resources/hp-audio-track.vtt" default>
+                        </audio>
+                    </figure>
                 </div>
                 <div class="cardLinks">
                     <a href="https://en.wikipedia.org/wiki/Bill_Hewlett" target="_blank">Bill Hewlett</a>
@@ -350,7 +362,7 @@
                     <p>
                         Microsoft was founded by Bill Gates.
                     </p>
-                    <img src="resources/BillGates.jpg" alt="Bill Gates head shot" width="90%"  >
+                    <img src="resources/BillGates.jpg" alt="Bill Gates head shot" width="90%">
                 </div>
                 <div class="cardLinks">
                     <a href="https://en.wikipedia.org/wiki/Bill_Gates" target="_blank">Bill Gates</a>
