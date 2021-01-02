@@ -6,7 +6,7 @@
 
 <head>
     <!-- Refresh the browser to load file changes while I'm adding to these notes -->
-    <meta http-equiv="refresh" content="10">
+    <!-- <meta http-equiv="refresh" content="2"> -->
 
     <!-- Metadata elements go in the head -->
     <meta charset="utf-8">
@@ -33,39 +33,46 @@
         body {
             background-color: var(--primary-light, lightgrey);
             font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-rows: 100px auto 30px;
+            grid-template-columns: 100px auto;
+            margin: 0px;
         }
 
         header {
-            position: fixed;
             color: var(--text-light, white);
             background-color: var(--primary, grey);
-            width: 100%;
-            top: 0%;
-            left: 0%;
-            padding: 10px 0px 0px 0px;
-            margin: 0px;
+            /* width: 100%; */
+            /* top: 0%; */
+            /* left: 0%; */
+            /* padding: 10px 0px 0px 0px; */
+            /* margin: 0px; */
             z-index: 100;
             text-align: center;
+            grid-row: 1/2;
+            grid-column: 1/3;
         }
 
         header h1 {
-            margin: 0px;
-            padding-bottom: 10px;
+            margin: 15px 0px 0px 0px;
+            padding: 0px;
         }
 
         nav {
             background-color: var(--primary-dark, grey);
-            margin: 0px;
+            /* margin: -5px; */
+            /* padding: 5px; */
         }
 
         nav ul {
-            margin: 0px;
-            padding: 5px 0px 5px 30px;
+            /* margin: 0px; */
+            padding: 8px;
         }
 
         nav li {
             display: inline;
-            margin-right: 20px;
+            /* margin: 10px; */
+            padding: 25px;
         }
 
         nav a {
@@ -73,19 +80,19 @@
             color: inherit;
         }
 
+        /* .left-nav {
+            grid-row: 2/3;
+            grid-column: 1/2;
+            background-color: var(--primary-dark);
+        } */
+
         main {
-            position: relative;
-            margin: 100px 0px 30px 0px;
-            /* 
-            display: grid;
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto auto auto;
-            gap: 0px 0px; 
-            */
+            padding: 5px;
+            grid-row: 2/3;
+            grid-column: 1/3;
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            /* justify-content: space-around; */
             flex-wrap: wrap;
         }
 
@@ -95,7 +102,7 @@
             color: var(--text-dark, black);
         }
 
-        h4 {
+        main h4 {
             background-color: var(--primary, darkgrey);
             color: var(--text-light, white);
             padding: 10px;
@@ -107,20 +114,17 @@
             font-weight: 550;
         }
 
-        a {
-            opacity: 0.9;
-
-            /* Not working as intended */
-            /* TODO: Fix */
-            text-align: justify;
-        }
-
         /*
         Pseudo-classes
             Added to selectors, to target by state
         */
         a:hover {
             color: var(--secondary-dark, orangered);
+        }
+
+        .cardLinks {
+            opacity: 0.9;
+            text-align: center;
         }
 
         figure {
@@ -168,10 +172,6 @@
             padding: 10px;
         }
 
-        .cardLinks {
-            text-align: justify;
-        }
-
         /*
         Normal flow
             CSS Box Model
@@ -198,10 +198,10 @@
                     Doesn't move when the user scrolls
         */
         /* this moves the element 10 pixels down, away from the top side of where it would have normally been positioned */
-        .relative-position {
+        /* .relative-position {
             position: relative;
             top: 10px;
-        }
+        } */
 
         #apple {
             background: linear-gradient(50deg, red, orange, yellow, green, blue, indigo, purple);
@@ -217,6 +217,8 @@
         footer {
             color: var(--text-dark, black);
             text-align: center;
+            grid-row: 3/4;
+            grid-column: 1/4;
         }
 
         footer p:hover {
@@ -278,6 +280,8 @@
             </ul>
         </nav>
     </header>
+
+    <!-- <div class="left-nav"></div> -->
 
     <main id="main">
 
