@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- Refresh the browser to load file changes while I'm adding to these notes -->
+    <!-- <meta http-equiv="refresh" content="2"> -->
+
+    <title>Product Landing Page</title>
+
+    <style>
+        :root {
+            /* Define colour variables globally, so they're available in any scope on the page */
+            --primary: #344955;
+            --primary-dark: #232F34;
+            --primary-light: #4A6572;
+            --secondary: #F9AA33;
+            --secondary-dark: #C17B00;
+            --secondary-light: #FFDC65;
+            --text-light: #D3D3D3;
+            --text-dark: #000000;
+        }
+
+        body {
+            background-color: var(--primary-light, lightgrey);
+            font-family: Arial, sans-serif;
+
+        }
+
+        header {
+            /* #13: The navbar should always be at the top of the viewport. */
+            position: fixed;
+            background-color: var(--primary-dark, grey);
+            color: var(--text-light, white);
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            padding: 10px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: x-large;
+        }
+
+        header img {
+            position: fixed;
+            right: 10px;
+            height: 50px;
+        }
+
+        nav {
+            background-color: var(--primary-dark, grey);
+            margin: 0px;
+            padding: 0px;
+        }
+
+        nav ul {
+            margin: 10px 0px 0px 0px;
+            padding: 0px;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0px;
+            padding: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        main {
+            position: relative;
+            margin: 110px 0px 30px 0px;
+        }
+
+        /* #14: use a media query */
+        @media (max-width: 800px) {
+            main {
+                background-color: var(--primary);
+            }
+        }
+
+        #email-signup {
+            /* #15: use a CSS flexbox */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        /* #submit {
+            background-color: green;
+            margin: 5px;
+            padding: 5px;
+        } */
+
+        footer {
+            color: var(--text-dark, black);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <!-- #1: header element with a corresponding id="header" -->
+    <header id="header">
+        <!-- #2: an image within the header element with a corresponding id="header-img" -->
+        <img src="https://www.petmd.com/sites/default/files/styles/article_image/public/CANS_dogsmiling_379727605.jpg"
+            alt="smiling dog" id="header-img">
+        <h1>Header</h1>
+        <!-- #3: a nav element with a corresponding id="nav-bar" inside header -->
+        <nav id="nav-bar">
+            <ul>
+                <!-- #4: I can see at least three clickable elements inside the nav element, each with the class nav-link. -->
+                <!-- #5: .nav-link button takes user to the corresponding section of the landing page -->
+                <li><a href="#body" class="nav-link">Top</a></li>
+                <li><a href="#main" class="nav-link">Content</a></li>
+                <li><a href="#footer" class="nav-link">Bottom</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- #6: embedded product video with id="video" -->
+        <video id="video" src="" controls></video>
+
+    </main>
+
+    <div id="email-signup">
+        <!-- #7: My landing page has a form element with a corresponding id="form" -->
+        <!-- #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit). -->
+        <form id="form" action="https://www.freecodecamp.com/email-submit">
+
+            <!-- #8: Within the form, there is an input field with id="email" where I can enter an email address. -->
+            <!-- #9: The #email input field should have placeholder text to let the user know what the field is for. -->
+            <!-- #10: The #email input field uses HTML5 validation to confirm that the entered text is an email address. -->
+            <label for="email" id="email-label">Sign up for our newsletter:</label>
+            <input id="email" name="email" type="email" placeholder="Email address" required>
+
+            <!-- #11: Within the form, there is a submit input with a corresponding id="submit". -->
+            <input type="submit" id="submit" value="Sign up!">
+        </form>
+    </div>
+
+    <footer id="footer">
+        Footer
+    </footer>
+
+</body>
+
+</html>
