@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- Refresh the browser to load file changes while I'm adding to these notes -->
+    <meta http-equiv="refresh" content="2">
+
+    <title>CSS Flexbox and Grid</title>
+
+    <style>
+        :root {
+            /* Define colour variables globally, so they're available in any scope on the page */
+            --primary: #344955;
+            --primary-dark: #232F34;
+            --primary-light: #4A6572;
+            --secondary: #F9AA33;
+            --secondary-dark: #C17B00;
+            --secondary-light: #FFDC65;
+            --text-light: #D3D3D3;
+            --text-dark: #000000;
+        }
+
+        body {
+            background-color: var(--primary-light, lightgrey);
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            position: fixed;
+            color: var(--text-light, white);
+            background-color: var(--primary-dark, grey);
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            padding: 10px;
+            z-index: 100;
+            text-align: center;
+        }
+
+        main {
+            position: relative;
+            margin: 60px 0px 30px 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .flexbox {
+            height: 200px;
+            width: 200px;
+            background-color: var(--primary);
+            border: 2px solid var(--primary-dark);
+        }
+
+        footer {
+            color: var(--text-dark, black);
+            text-align: center;
+        }
+
+        /* 
+        
+        Flexbox
+            Parent container
+                display: flex
+                flex-direction:
+                    row
+                    column
+                    reverse-row
+                    reverse-column
+                justify-content - main axis (row or column)
+                    flex-start*
+                    flex-end
+                    space-between
+                    space-around*
+                    space-evenly
+                align-items - same as justify-content, but on the cross axis
+                    flex-start*
+                    flex-end
+                    center
+                    stretch*
+                    baseline
+                flex-wrap
+                    wrap*
+                    nowrap
+                    wrap-reverse
+            Child item
+                order - sets a sort order priority, to sort items differently than they appear in the code
+                align-self - overrides the parent's align-items
+                flex-grow - grow factor, relative to its siblings
+                flex-shrink - shrink factor, relative to its siblings
+                flex-basis - starting size
+                flex
+
+         */
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Header
+    </header>
+
+    <main>
+        <section id="section1" class="flexbox"></section>
+        <section id="section2" class="flexbox" style="height: 10px;"></section>
+        <section id="section3" class="flexbox"></section>
+        <section id="section4" class="flexbox"></section>
+        <section id="section5" class="flexbox"></section>
+        <section id="section6" class="flexbox"></section>
+        <section id="section7" class="flexbox"></section>
+    </main>
+
+
+    <footer>
+        Footer
+    </footer>
+
+</body>
+
+</html>
