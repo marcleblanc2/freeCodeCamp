@@ -8,7 +8,7 @@
     <!-- Metadata elements go in the head -->
 
     <!-- Refresh the browser to load file changes while I'm adding to these notes -->
-    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="refresh" content="10">
 
     <!-- Sets the page title, used to name the tab, and for Google search listings -->
     <title>Applied Visual Design</title>
@@ -45,9 +45,40 @@
             text-align: center;
         }
 
+        header h1 {
+            margin: 0px;
+            padding-bottom: 10px;
+        }
+
+        nav {
+            background-color: var(--primary-dark, grey);
+            margin: 0px;
+        }
+
+        nav ul {
+            margin: 0px;
+            padding: 5px 0px 5px 30px;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         main {
             position: relative;
             margin: 100px 0px 30px 0px;
+        }
+
+        main p {
+            text-align: left;
+            line-height: 20px;
+            color: var(--text-dark, black);
         }
 
         h4 {
@@ -60,12 +91,6 @@
             text-transform: capitalize;
             font-size: 27px;
             font-weight: 550;
-        }
-
-        p {
-            text-align: left;
-            line-height: 20px;
-            color: var(--text-dark, black);
         }
 
         a {
@@ -149,9 +174,25 @@
             top: 10px;
         }
 
+        #apple {
+            background: linear-gradient(50deg, red, orange, yellow, green, blue, indigo, purple );
+        }
+        
+        #google {
+            /* Set the background to an image instead of a colour */
+            /* background: url("https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png"); */
+            /* Set the background to a local image instead of a colour */
+            background-image: url("resources/MJAkxbh.png");
+        }
+
         footer {
             color: var(--text-dark, black);
             text-align: center;
+        }
+
+        footer p:hover {
+            /* Can transform elements with functions, including scale */
+            transform: scale(1.15);
         }
 
         /* 
@@ -179,30 +220,8 @@
                 lightness - black (0%), normal (50%), white (100%)
         */
 
-        header h1 {
-            margin: 0px;
-            padding-bottom: 10px;
-        }
 
-        nav {
-            background-color: var(--primary-dark, grey);
-            margin: 0px;
-        }
-
-        nav ul {
-            margin: 0px;
-            padding: 5px 0px 5px 30px;
-        }
-
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: inherit;
-        }
+        
     </style>
 </head>
 
@@ -250,20 +269,6 @@
                 <div class="cardLinks">
                     <a href="https://en.wikipedia.org/wiki/Larry_Page" target="_blank">Larry Page</a>
                     <a href="https://en.wikipedia.org/wiki/Sergey_Brin" target="_blank">Sergey Brin</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="microsoft" class="fullCard">
-            <div class="cardContent">
-                <div class="cardText">
-                    <h4>Microsoft</h4>
-                    <p>
-                        Microsoft was founded by Bill Gates.
-                    </p>
-                </div>
-                <div class="cardLinks">
-                    <a href="https://en.wikipedia.org/wiki/Bill_Gates" target="_blank">Bill Gates</a>
                 </div>
             </div>
         </div>
@@ -327,10 +332,27 @@
             </div>
         </div>
 
+        <div id="microsoft" class="fullCard">
+            <div class="cardContent">
+                <div class="cardText">
+                    <h4>Microsoft</h4>
+                    <p>
+                        Microsoft was founded by Bill Gates.
+                    </p>
+                    <img src="resources/BillGates.jpg" alt="Bill Gates head shot" width="90%"  >
+                </div>
+                <div class="cardLinks">
+                    <a href="https://en.wikipedia.org/wiki/Bill_Gates" target="_blank">Bill Gates</a>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer id="footer">
-        Footer
+        <p>
+            Footer
+        </p>
     </footer>
 
 </body>
