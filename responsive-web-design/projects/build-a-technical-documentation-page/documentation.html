@@ -4,45 +4,83 @@
 
 <head>
     <!-- Refresh the browser to load file changes while I'm adding to these notes -->
-    <!-- <meta http-equiv="refresh" content="2"> -->
+    <meta http-equiv="refresh" content="2">
 
     <title>Technical Documentation</title>
 
     <style>
         :root {
             /* Define colour variables globally, so they're available in any scope on the page */
-            --primary: #344955;
-            --primary-dark: #232F34;
-            --primary-light: #4A6572;
-            --secondary: #F9AA33;
-            --secondary-dark: #C17B00;
-            --secondary-light: #FFDC65;
-            --text-light: #D3D3D3;
-            --text-dark: #000000;
+
+            --primary: hsl(207, 90%, 77%);
+            --primary-dark: hsl(206, 48%, 57%);
+            --primary-light: hsl(182, 100%, 88%);
+
+            --secondary: hsl(36, 94%, 59%);
+            --secondary-dark: hsl(38, 100%, 38%);
+            --secondary-light: hsl(46, 100%, 70%);
+
+            --nav-background: var(--primary);
+            --body-background: hsl(240, 2%, 88%);
+            --card-background: hsl(240, 5%, 96%);
+
+            --text-light: hsl(0, 0%, 99%);
+            --text-dark: hsl(0, 0%, 0%);
+
         }
 
         body {
-            background-color: var(--primary-light, lightgrey);
+            background-color: var(--body-background, lightgrey);
             font-family: Arial, sans-serif;
+            font-size: large;
         }
 
         /* #14: On laptops / desktops, navbar on the left and always visible to the user */
         nav {
+            background-color: var(--nav-background, grey);
+            color: var(--text-dark, white);
+            font-size: x-large;
             position: fixed;
-            color: var(--text-light, white);
-            background-color: var(--primary-dark, grey);
+            top: 0px;
+            left: 0px;
+            width: 20%;
             height: 100%;
-            top: 0%;
-            left: 0%;
-            padding: 10px;
             z-index: 100;
+            padding: 0px;
+            margin: 0px;
         }
 
-        /* 
+        nav header {
+            padding: 10px;
+        }
+
+        nav ul {
+            padding: 0px;
+            list-style: none;
+        }
+
+        nav li {
+            padding: 10px;
+            /* border: 1px solid; */
+        }
+
+        nav li a {
+            text-decoration: none;
+        }
+
         main {
             position: relative;
-            margin: 60px 0px 30px 0px;
-        } */
+            left: 20%;
+            top: 10px;
+            width: 80%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .main-section {
+            background-color: var(--card-background);
+            margin: 10px;
+        }
 
         /* #15: 1+ media query */
         @media (max-width: 100) {
@@ -56,7 +94,7 @@
 <body>
 
     <!-- Test script -->
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 
     <!-- #8: nav with id="navbar" -->
     <nav id="navbar">
