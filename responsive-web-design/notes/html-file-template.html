@@ -6,24 +6,35 @@
     <!-- Refresh the browser to load file changes while I'm adding to these notes -->
     <meta http-equiv="refresh" content="2">
 
-    <title>Applied Visual Design</title>
+    <title>HTML File Template</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Marc LeBlanc">
+    <meta name="description" content="Template for new HTML files">
 
     <style>
         :root {
             /* Define colour variables globally, so they're available in any scope on the page */
-            --primary: #344955;
-            --primary-dark: #232F34;
-            --primary-light: #4A6572;
-            --secondary: #F9AA33;
-            --secondary-dark: #C17B00;
-            --secondary-light: #FFDC65;
-            --text-light: #D3D3D3;
-            --text-dark: #000000;
+
+            --primary: hsl(207, 90%, 77%);
+            --primary-dark: hsl(206, 48%, 57%);
+            --primary-light: hsl(182, 100%, 88%);
+
+            --secondary: hsl(36, 94%, 59%);
+            --secondary-dark: hsl(38, 100%, 38%);
+            --secondary-light: hsl(46, 100%, 70%);
+
+            --body-background: hsl(240, 2%, 88%);
+            --card-background: hsl(240, 5%, 96%);
+
+            --text-light: hsl(0, 0%, 99%);
+            --text-dark: hsl(0, 0%, 0%);
+
         }
 
         body {
-            background-color: var(--primary-light, lightgrey);
-            font-family: Arial, sans-serif;
+            background-color: var(--body-background, lightgrey);
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: large;
         }
 
         header {
@@ -51,6 +62,8 @@
 </head>
 
 <body>
+    <!-- Test script -->
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 
     <header>
         Header
