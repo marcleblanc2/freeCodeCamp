@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- Refresh the browser to load file changes while I'm adding to these notes -->
+    <meta http-equiv="refresh" content="2">
+
+    <title>Personal Portfolio</title>
+
+    <style>
+        :root {
+            /* Define colour variables globally, so they're available in any scope on the page */
+
+            --primary: hsl(207, 90%, 77%);
+            --primary-dark: hsl(206, 48%, 57%);
+            --primary-light: hsl(182, 100%, 88%);
+
+            --secondary: hsl(36, 94%, 59%);
+            --secondary-dark: hsl(38, 100%, 38%);
+            --secondary-light: hsl(46, 100%, 70%);
+
+            --body-background: hsl(240, 2%, 88%);
+            --card-background: hsl(240, 5%, 96%);
+
+            --text-light: hsl(0, 0%, 99%);
+            --text-dark: hsl(0, 0%, 0%);
+
+        }
+
+        body {
+            background-color: var(--body-background, lightgrey);
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: large;
+        }
+
+        nav {
+            background-color: var(--primary-dark, grey);
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            z-index: 100;
+            padding: 10px;
+            margin: 0px;
+            text-align: center;
+        }
+
+        nav header {
+            color: var(--text-light, white);
+            font-size: xx-large;
+        }
+
+        nav ul {
+            padding: 0px;
+            margin: 10px 0px 0px 0px;
+        }
+
+        nav li {
+            display: inline;
+            padding: 25px;
+            margin: 0px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* #9: 1+ media query */
+
+        /* #10: height of the welcome section equals the height of the viewport */
+
+        /* #11: navbar is always at the top of the viewport */
+
+        main {
+            position: relative;
+            margin: 60px 0px 30px 0px;
+        }
+
+        footer {
+            color: var(--text-dark, black);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Test script -->
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+
+    <!-- #6: navbar with id="navbar" -->
+    <nav id="navbar">
+        <header>Marc LeBlanc's Portfolio</header>
+        <!-- #7: navbar contains 1+ links to navigate to different sections of the page -->
+        <ul>
+            <li><a href="#welcome-section">Welcome</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- #1: welcome section with an id of welcome-section -->
+        <section id="welcome-section">
+            <!-- #2: welcome section has an h1 element that contains text -->
+            <h1>Welcome to my portfolio!</h1>
+        </section>
+
+
+        <!-- #3: projects section with an id of projects -->
+        <section id="projects">
+            <!-- #4: projects section contains 1+ elements with class="project-tile" to hold a project -->
+            <div class="project-tile">
+                <!-- #5: projects section contains 1+ links to a project -->
+                <a href="#">Link to a project in my GitHub repo</a>
+            </div>
+
+        </section>
+
+
+        <!-- #8: a link with an id="profile-link" to GitHub profile in a new tab -->
+        <a href="#" id="profile-link" target="_blank">GitHub Profile</a>
+
+
+    </main>
+
+
+    <footer>
+        Footer
+    </footer>
+
+</body>
+
+</html>
